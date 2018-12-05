@@ -25,7 +25,8 @@ gulp.task('sass', ()=>{
   gulp.src('./app/sass/*.scss')
   .pipe(sass())
   .pipe(autoprefixer({
-    browsers: ['last 2 versions']
+    grid: true,
+    browsers: ['last 2 version']
   }))
   .pipe(clean())
   .pipe(gulp.dest('./dist/css'))
@@ -36,8 +37,10 @@ gulp.task('sass', ()=>{
 
 //Copy static files
 gulp.task('static', () => {
-  gulp.src('app/**/*.html').pipe(gulp.dest('dist'))
-  gulp.src('app/assets/**/*.*').pipe(gulp.dest('dist/assets'))
+  gulp.src('app/**/*.html')
+  .pipe(gulp.dest('dist'))
+  gulp.src('app/assets/**/*.*')
+  .pipe(gulp.dest('dist/assets'))
   .pipe(browserSync.reload({
     stream: true
   }))
@@ -50,20 +53,20 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', ['clean'], ()=>{
-  gulp.start(['static', 'sass', 'js']);
+  gulp.start(['static', 'sass', 'js'])
 });
 
 gulp.task('browserSync', function() {
   browserSync.init({
       server: {
-          baseDir: "./dist"
+          baseDir: "./dist", 
       }
   });
 });
 
 gulp.task('watch', ['default', 'browserSync'], () =>{
-  gulp.watch('./app/sass/*.scss', ['sass'], browserSync.reload);
-  gulp.watch('./app/js/**/*.js', ['js'], browserSync.reload);
+  gulp.watch('./app/sass/*.scss', ['sass'], browserSync.reload)
+  gulp.watch('./app/js/**/*.js', ['js'], browserSync.reload)
   gulp.watch('./app/**/*.html', ['static'], browserSync.reload)
 })
 

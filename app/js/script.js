@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
     let hamburger = document.querySelector(".hamburger")
+    let menu = document.querySelector(".menu")
+    let nav = document.querySelector("nav")
 
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", (e) => {
+        e.preventDefault()
         hamburger.classList.toggle("open")
+        nav.classList.toggle("open")
+        menu.classList.toggle("menu-open")
     })
-
-    console.log(x)
-
-    let x = "fsaf"
-
-    console.log(x)
 })
