@@ -1,3 +1,7 @@
+/*******************************************
+HOME STYLES
+*******************************************/
+
 $hamburger-size: 50px;
 $menu-font-color: rgb(255, 255, 255);
 $menu-bg-color: #4C98CF;
@@ -31,10 +35,6 @@ $menu-font-size: 36px;
 * {
     font-family: $font;
     box-sizing: border-box;
-}
-
-body {
-    background: #000;
 }
 
 .hamburger {
@@ -86,7 +86,7 @@ body {
     right: 3vw;
     top: 3vh; 
     color: $menu-font-color;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     text-decoration: none;
     opacity: .8;
@@ -216,7 +216,7 @@ nav {
     .menu.menu-open{
         opacity: 0;
         transform: translateX(100vw);
-        animation: slideIn .6s ease-in .8s forwards;
+        animation: slideIn .6s ease-in .6s forwards;
     }
 
     .social-container {
@@ -254,12 +254,14 @@ nav {
     }
 }
 
-main {
+.main {
     overflow: hidden;
     padding: 0;
     margin: 0;
     width: 100%;
     font-size: $menu-font-size/3;
+
+
     .nav-category {
         position: absolute;
         display: flex;
@@ -468,19 +470,13 @@ main {
         transform: translateX(50vw);
     }
 
-    20%{
-        opacity: 1;
+    30%{
+        opacity: 0.5;
         transform: translateX(20vw);
     }
-
-    50%{
+    60%{
         opacity: 1;
-        transform: translateX(-25vw);
-    }
-
-    70%{
-        opacity: 1;
-        transform: translateX(15vw);
+        transform: translateX(-20vw);
     }
 
     100%{
@@ -488,3 +484,341 @@ main {
         transform: translateX(0);
     }
 }
+
+/*******************************************
+LOADING ANIMATIONS
+*******************************************/
+
+$list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
+
+.loading-animations-container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+
+    .arrow{
+        font-size: 6em;
+        color: #fff;
+    }
+
+    .arrow-right{
+        position: absolute;
+        right: 3%;
+        top: 50vh;
+        transform: translateY(-50%);
+        opacity: .6;
+
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+
+    .arrow-left{
+        position: absolute;
+        left: 3%;
+        top: 50vh;
+        transform: translateY(-50%);
+        opacity: .6;
+
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+
+    .animations{
+        width: 1200px;
+        height: 80px;
+        top: 50%;
+        left: 50%;
+        position: relative;
+        transform: translateX(-60px) translateY(-50%);
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li{
+                height: 80px;
+                display: inline-block;
+                margin: 0 20px;
+                opacity: 0;
+            }
+
+            .animate{
+                background: nth($list-bg-color, 3);
+                opacity: .8;
+            }
+
+            .selected{
+                opacity: 1;
+            }
+
+            .animate-1{
+                width: 80px;
+                height: 80px;
+                animation: animation1 1s infinite ease-in-out;
+            }
+
+            .animate-2{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                animation: animation2 .7s infinite ease-in-out;
+                margin: 30px 40px 0 40px;
+
+                &::before{
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    transform: translateX(-40px);
+                    background: nth($list-bg-color, 3);
+                    display: block;
+                }
+
+                &::after{
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    transform: translateX(40px);
+                    background: nth($list-bg-color, 3);
+                    display: block;
+                    margin-top: -20px;
+                }
+            }
+
+            .animate-3{
+                width: 80px;
+                height: 80px;
+                position: relative;
+                margin: 0 85px;
+                opacity: .8;
+                background: none;
+                transform: rotate(45deg);
+
+                .animate-3--square{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: nth($list-bg-color, 3);
+                    top: 30px;
+                    left: 30px;
+                }
+
+                .animate-3--square-big{
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    background: nth($list-bg-color, 3);
+                    animation: animation3-square-big 2s infinite;
+                }
+
+                .square-1{
+                    animation: animation3-square1 2s infinite;
+                    animation-delay: .1s;
+                }
+
+                .square-2{
+                    animation: animation3-square2 2s infinite;
+                    animation-delay: .2s;
+                }
+
+                .square-3{
+                    animation: animation3-square3 2s infinite;
+                    animation-delay: .3s;
+                }
+
+                .square-4{
+                    animation: animation3-square4 2s infinite;
+                    animation-delay: .4s;
+                }
+
+                .square-5{
+                    animation: animation3-square5 2s infinite;
+                    animation-delay: .5s;
+                }
+
+                .square-6{
+                    animation: animation3-square6 2s infinite;
+                    animation-delay: .6s;
+                }
+
+                .square-7{
+                    animation: animation3-square7 2s infinite;
+                    animation-delay: .7s;
+                }
+
+                .square-8{
+                    animation: animation3-square8 2s infinite;
+                    animation-delay: .8s;
+                }
+            }
+
+            .animate-4{
+                width: 80px;
+                height: 80px;
+                background: none;
+                position: relative;
+                animation: animation-4-square-rotate 2s infinite;
+                margin: 0 10px;
+
+                .animation-4--square{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: nth($list-bg-color, 3);
+                }
+
+                .animation-4--square-1{
+                    top: 0;
+                    left: 0;
+                    animation: animation-4-square .5s infinite;
+                }
+
+                .animation-4--square-2{
+                    top: 0;
+                    left: 60px;
+                    animation: animation-4-square .5s infinite;
+                }
+
+                .animation-4--square-3{
+                    top: 60px;
+                    left: 60px;
+                    animation: animation-4-square .5s infinite;
+                }
+
+                .animation-4--square-4{
+                    top: 60px;
+                    left: 0;
+                    animation: animation-4-square .5s infinite;
+                }
+            }
+
+        }
+    }
+}
+
+.active1{
+    background-color: nth($list-bg-color, 1);
+}
+
+.active2{
+    background-color: nth($list-bg-color, 2);
+}
+
+.active3{
+    background-color: nth($list-bg-color, 3);
+}
+
+.active4{
+    background-color: nth($list-bg-color, 4);
+}
+
+.active5{
+    background-color: nth($list-bg-color, 5);
+}
+
+@keyframes animation1{
+    0%{
+        transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+    }
+
+    50%{
+        transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+    }
+
+    100%{
+        transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+@keyframes animation2{
+    0%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@keyframes animation3-square1{
+    50%{
+        transform: translate(-80px, -80px);
+    }
+}
+
+@keyframes animation3-square2{
+    50%{
+        transform: translate(0, -80px);
+    }
+}
+
+@keyframes animation3-square3{
+    50%{
+        transform: translate(80px, -80px);
+    }
+}
+
+@keyframes animation3-square4{
+    50%{
+        transform: translate(80px, 0);
+    }
+}
+
+@keyframes animation3-square5{
+    50%{
+        transform: translate(80px, 80px);
+    }
+}
+
+@keyframes animation3-square6{
+    50%{
+        transform: translate(0, 80px);
+    }
+}
+
+@keyframes animation3-square7{
+    50%{
+        transform: translate(-80px, 80px);
+    }
+}
+
+@keyframes animation3-square8{
+    50%{
+        transform: translate(-80px, 0);
+    }
+}
+
+@keyframes animation3-square-big{
+    50%{
+       transform: scale(.25);
+    }
+}
+
+@keyframes animation-4-square-rotate{
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    } 
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animation-4-square{
+    50%{
+        transform: rotate(90deg) scale(.5);
+    } 
+}
+
+
