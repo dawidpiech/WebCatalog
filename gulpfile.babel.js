@@ -1,19 +1,22 @@
-import gulp from 'gulp';
-import del from 'del';
-import sass from 'gulp-sass';
-import clean from 'gulp-clean-css';
-import autoprefixer from 'gulp-autoprefixer';
-import concat from 'gulp-concat';
-import uglify from 'gulp-uglify-es';
-let browserSync = require('browser-sync').create();
+import gulp from 'gulp'
+import del from 'del'
+import sass from 'gulp-sass'
+import clean from 'gulp-clean-css'
+import autoprefixer from 'gulp-autoprefixer'
+import concat from 'gulp-concat'
+import uglify from 'gulp-uglify-es'
+import sourcemaps from 'gulp-sourcemaps'
+let browserSync = require('browser-sync').create()
 
 gulp.task('default', ['build']);
 
 //Minify and concat js file
 gulp.task('js', ()=>{
   gulp.src('./app/js/*.js')
+  .pipe(sourcemaps.init())
   .pipe(concat('main.min.js'))
-  .pipe(uglify())
+  .pipe(uglify().on('error', console.log))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./dist/js'))
   .pipe(browserSync.reload({
     stream: true
@@ -23,12 +26,14 @@ gulp.task('js', ()=>{
 //compile sass file
 gulp.task('sass', ()=>{
   gulp.src('./app/sass/*.scss')
-  .pipe(sass())
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({
     grid: true,
     browsers: ['last 2 version']
   }))
   .pipe(clean())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./dist/css'))
   .pipe(browserSync.reload({
     stream: true

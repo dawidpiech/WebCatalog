@@ -1,123 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta
-			charset="UTF-8">
-		<title>Web Catalog</title>
-		<link
-			type="text/css"
-			rel="stylesheet"
-			href="./css/normalize.css">
-		<link
-			type="text/css"
-			rel="stylesheet"
-			href="./css/styles.css">
-		<link
-			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-			integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-			crossorigin="anonymous">
-		<link
-			href="https://fonts.googleapis.com/css?family=Ubuntu"
-			rel="stylesheet">
-    </head>
-    
-    <body>  
 
-		<header>
-			<a href="" class="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
-			<a href="https://github.com/dawidpiech/WebCatalog" class="view-on-git" target="_blank">
-				<i class="fab fa-github" style="font-size: 24px;"></i>
-				<span>View project on Github</span>
-				<div class="view-on-git-underline"></div>
-			</a>
-			<nav>
-				<div class="menu">
-					<div class="author">
-						<span>DAWID PIECH</span>
-						<div class="under-line"></div>
-					</div>
-					<ul>
-						<li>
-							<a href="./index.html">Home</a>
-						</li>
-						<li>
-							<a href="">My
-								portfolio</a>
-						</li>
-					</ul>
-	
-					<div class="social-container">
-						<a href="https://github.com/dawidpiech" target="_blank" class="git social">
-							<i class="fab fa-github" style="padding-right: 10px;"></i>
-							 Github
-						</a>
-						<a href="https://www.linkedin.com/in/dawid-piech-2a2999159/" target="_blank" class="linkedin social">
-							<i class="fab fa-linkedin" style="padding-right: 10px;"></i>
-							 Linkedin
-						</a>
-					</div>
+<head>
+	<meta charset="UTF-8">
+	<title>Web Catalog</title>
+	<link type="text/css" rel="stylesheet" href="./css/normalize.css">
+	<link type="text/css" rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<body>
+
+	<header>
+		<a href="" class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<a href="https://github.com/dawidpiech/WebCatalog" class="view-on-git" target="_blank">
+			<i class="fab fa-github"></i>
+			<span>View project on Github</span>
+			<div class="view-on-git-underline"></div>
+		</a>
+		<nav>
+			<div class="menu">
+				<div class="author">
+					<span>DAWID PIECH</span>
+					<div class="under-line"></div>
 				</div>
-			</nav>
-		</header>
-
-		<main class="loading-animations-container active1">
-			<div class="animations">
 				<ul>
-					<li class="selected">
-						<div class="animate animate-1"></div>
+					<li>
+						<a href="./index.html">Home</a>
 					</li>
 					<li>
-						<div class="animate animate-2"></div>
-					</li>
-					<li>
-						<div class="animate animate-3">
-							<div class="animate-3--square square-1"></div>
-							<div class="animate-3--square square-2"></div>
-							<div class="animate-3--square square-3"></div>
-							<div class="animate-3--square square-4"></div>
-							<div class="animate-3--square square-5"></div>
-							<div class="animate-3--square square-6"></div>
-							<div class="animate-3--square square-7"></div>
-							<div class="animate-3--square square-8"></div>
-							<div class="animate-3--square-big"></div>
-						</div>
-					</li>
-					<li>
-						<div class="animate animate-4">
-							<div class="animation-4--square-1 animation-4--square"></div>
-							<div class="animation-4--square-2 animation-4--square"></div>
-							<div class="animation-4--square-3 animation-4--square"></div>
-							<div class="animation-4--square-4 animation-4--square"></div>
-						</div>
-					</li>
-					<li>
-						<div class="animate animate-5"></div>
-					</li>
-					<li>
-						<div class="animate animate-6"></div>
-					</li>
-					<li>
-						<div class="animate animate-7"></div>
-					</li>
-					<li>
-						<div class="animate animate-8"></div>
+						<a href="">My
+							portfolio</a>
 					</li>
 				</ul>
-			</div><!--	tutaj mam wrzucić animacje  -->
-			<div class="animations-source"></div><!-- tutaj muszę dodać source wraz z jakąć fajną animacją  -->
-			<a class="arrow arrow-left">
-				<i class="fa fa-angle-left"></i>
-			</a>
-			<a class="arrow arrow-right">
-				<i class="fa fa-angle-right"></i>
-			</a>
-		</main>
 
-		<script type="text/javascript" src="js/main.min.js"></script>
-    </body>
+				<div class="social-container">
+					<a href="https://github.com/dawidpiech" target="_blank" class="git social">
+						<i class="fab fa-github" style="padding-right: 10px;"></i>
+						Github
+					</a>
+					<a href="https://www.linkedin.com/in/dawid-piech-2a2999159/" target="_blank" class="linkedin social">
+						<i class="fab fa-linkedin" style="padding-right: 10px;"></i>
+						Linkedin
+					</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="loading-animations-container active1">
+		<div class="animations">
+			<ul>
+				<li class="selected">
+					<div class="animate animate-1"></div>
+				</li>
+				<li>
+					<div class="animate animate-2"></div>
+				</li>
+				<li>
+					<div class="animate animate-3">
+						<div class="animate-3--square square-1"></div>
+						<div class="animate-3--square square-2"></div>
+						<div class="animate-3--square square-3"></div>
+						<div class="animate-3--square square-4"></div>
+						<div class="animate-3--square square-5"></div>
+						<div class="animate-3--square square-6"></div>
+						<div class="animate-3--square square-7"></div>
+						<div class="animate-3--square square-8"></div>
+						<div class="animate-3--square-big"></div>
+					</div>
+				</li>
+				<li>
+					<div class="animate animate-4">
+						<div class="animation-4--square-1 animation-4--square"></div>
+						<div class="animation-4--square-2 animation-4--square"></div>
+						<div class="animation-4--square-3 animation-4--square"></div>
+						<div class="animation-4--square-4 animation-4--square"></div>
+					</div>
+				</li>
+				<li>
+					<div class="animate animate-5">
+						<div class="dot-1"></div>
+						<div class="dot-2"></div>
+					</div>
+				</li>
+				<li>
+					<div class="animate animate-6">
+						<div class="dot dot-1"></div>
+						<div class="dot dot-2"></div>
+						<div class="dot dot-3"></div>
+						<div class="dot dot-4"></div>
+						<div class="dot dot-5"></div>
+					</div>
+				</li>
+				<li>
+					<div class="animate animate-7">
+						<div class="animate-7-container">
+								<div class="square"></div>
+								<p>Loading</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="animate animate-8">
+						<div class="dot dot-1"></div>
+						<div class="dot dot-2"></div>
+						<div class="dot dot-3"></div>
+						<div class="dot dot-4"></div>
+						<div class="dot dot-5"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="animations-source source-close">
+			<a href="./loading-animations.html" class="source-close-btn">
+				<i class="fa fa-times-circle"></i>
+			</a>
+			<div class="animate-source animate-1-source" style="display: block">
+				<h1>Animation 1</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container"><code class="source-code">&lt;div class=&quot;animate animate-1&quot;&gt;&lt;/div&gt;</code></pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container"><code class="source-code">
+.animate{
+&#x9;background: nth($list-bg-color, 3);
+&#x9;opacity: .8;
+}
+
+.animate-1{
+&#x9;width: 80px;
+&#x9;height: 80px;
+&#x9;animation: animation1 1s infinite ease-in-out;
+}
+
+@keyframes animation1{
+&#x9;0%{
+&#x9;&#x9;transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+&#x9;}
+
+&#x9;50%{
+&#x9;&#x9;transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+&#x9;}
+
+&#x9;100%{
+&#x9;&#x9;transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+&#x9;}
+}</code></pre>
+			</div>
+			<div class="animate-source animate-2-source">
+				<h1>Animation 2</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container"><code class="source-code">&lt;div class=&quot;animate animate-2&quot;&gt;&lt;/div&gt;</code></pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-2{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	animation: animation2 .7s infinite ease-in-out;
+	margin: 30px 40px 0 40px;
+
+	&amp;::before{
+		content: &quot;&quot;;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		transform: translateX(-40px);
+		background: $animation-color;
+		display: block;
+	}
+
+	&amp;::after{
+		content: &quot;&quot;;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		transform: translateX(40px);
+		background: $animation-color;
+		display: block;
+		margin-top: -20px;
+	}
+}
+
+@keyframes animation2{
+    0%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-3-source">
+				<h1>Animation 3</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&lt;div class=&quot;animate animate-3&quot;&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-1&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-2&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-3&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-4&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-5&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-6&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-7&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square square-8&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animate-3--square-big&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-3{
+	width: 80px;
+	height: 80px;
+	position: relative;
+	margin: 0 85px;
+	opacity: .8;
+	background: none;
+	transform: rotate(45deg);
+
+	.animate-3--square{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		background: $animation-color;
+		top: 30px;
+		left: 30px;
+	}
+
+	.animate-3--square-big{
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		background: $animation-color;
+		animation: animation3-square-big 2s infinite;
+	}
+
+	.square-1{
+		animation: animation3-square1 2s infinite;
+		animation-delay: .1s;
+	}
+
+	.square-2{
+		animation: animation3-square2 2s infinite;
+		animation-delay: .2s;
+	}
+
+	.square-3{
+		animation: animation3-square3 2s infinite;
+		animation-delay: .3s;
+	}
+
+	.square-4{
+		animation: animation3-square4 2s infinite;
+		animation-delay: .4s;
+	}
+
+	.square-5{
+		animation: animation3-square5 2s infinite;
+		animation-delay: .5s;
+	}
+
+	.square-6{
+		animation: animation3-square6 2s infinite;
+		animation-delay: .6s;
+	}
+
+	.square-7{
+		animation: animation3-square7 2s infinite;
+		animation-delay: .7s;
+	}
+
+	.square-8{
+		animation: animation3-square8 2s infinite;
+		animation-delay: .8s;
+	}
+}
+
+@keyframes animation3-square1{
+    50%{
+        transform: translate(-80px, -80px);
+    }
+}
+
+@keyframes animation3-square2{
+    50%{
+        transform: translate(0, -80px);
+    }
+}
+
+@keyframes animation3-square3{
+    50%{
+        transform: translate(80px, -80px);
+    }
+}
+
+@keyframes animation3-square4{
+    50%{
+        transform: translate(80px, 0);
+    }
+}
+
+@keyframes animation3-square5{
+    50%{
+        transform: translate(80px, 80px);
+    }
+}
+
+@keyframes animation3-square6{
+    50%{
+        transform: translate(0, 80px);
+    }
+}
+
+@keyframes animation3-square7{
+    50%{
+        transform: translate(-80px, 80px);
+    }
+}
+
+@keyframes animation3-square8{
+    50%{
+        transform: translate(-80px, 0);
+    }
+}
+
+@keyframes animation3-square-big{
+    50%{
+       transform: scale(.25);
+    }
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-4-source">
+				<h1>Animation 4</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&lt;div class=&quot;animate animate-4&quot;&gt;
+&#x9;&lt;div class=&quot;animation-4--square-1 animation-4--square&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animation-4--square-2 animation-4--square&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animation-4--square-3 animation-4--square&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;animation-4--square-4 animation-4--square&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-4{
+	width: 80px;
+	height: 80px;
+	background: none;
+	position: relative;
+	animation: animation-4-square-rotate 2s infinite;
+	margin: 0 10px;
+
+	.animation-4--square{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		background: $animation-color;
+	}
+
+	.animation-4--square-1{
+		top: 0;
+		left: 0;
+		animation: animation-4-square .5s infinite;
+	}
+
+	.animation-4--square-2{
+		top: 0;
+		left: 60px;
+		animation: animation-4-square .5s infinite;
+	}
+
+	.animation-4--square-3{
+		top: 60px;
+		left: 60px;
+		animation: animation-4-square .5s infinite;
+	}
+
+	.animation-4--square-4{
+		top: 60px;
+		left: 0;
+		animation: animation-4-square .5s infinite;
+	}
+}
+
+@keyframes animation-4-square-rotate{
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    } 
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animation-4-square{
+    50%{
+        transform: rotate(90deg) scale(.5);
+    } 
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-5-source">
+				<h1>Animation 5</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&lt;div class=&quot;animate animate-5&quot;&gt;
+&#x9;&lt;div class=&quot;dot-1&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;dot-2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-5{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background: none;
+	animation: animation-5-rotate 2s linear infinite;
+	.dot-1, .dot-2{
+		position: absolute;
+		width: 60%;
+		height: 60%;
+		display: inline-block;
+		top: 0;
+		background: #fff;
+		border-radius: 100%;
+		animation: animation-5-scale 2s ease-in-out infinite;
+		transform: scale(0);
+	}
+	.dot-2{
+		top: auto;
+		right: 0;
+		bottom: 0;
+		animation-delay: -1s;
+	}
+}
+
+@keyframes animation-5-rotate{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes animation-5-scale{
+	50%{
+		transform: scale(1);
+	}
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-6-source">
+				<h1>Animation 6</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&#x3C;div class=&#x22;animate animate-6&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;dot dot-1&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x3C;div class=&#x22;dot dot-2&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x3C;div class=&#x22;dot dot-3&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x3C;div class=&#x22;dot dot-4&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x3C;div class=&#x22;dot dot-5&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-6{
+	width: 160px;
+	height: 80px;
+	background: none;
+	.dot{
+		width: 20px;
+		height: 20px;
+		margin-top: 30px;
+		position: absolute;
+		border-radius: 50%;
+		animation: animation-6 3s ease-in-out infinite;
+		background: #fff;
+	}
+	.dot-1{
+		opacity: 1;
+
+	}
+
+	.dot-2{
+		opacity: .8;
+		animation-delay: .2s;
+	}
+
+	.dot-3{
+		opacity: .6;
+		animation-delay: .4s;
+	}
+
+	.dot-4{
+		opacity: .4;
+		animation-delay: .6s;
+	}
+
+	.dot-5{
+		opacity: .2;
+		animation-delay: .8s;
+	}
+}
+
+@keyframes animation-6{
+	30%{
+		margin-left: 140px;
+	}
+
+	50%{
+		margin-left: 140px;
+	}
+
+	80%{
+		margin-left: 0;
+	}
+
+	100%{
+		margin-left: 0;
+	}
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-7-source">
+				<h1>Animation 7</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&lt;div class=&quot;animate animate-7&quot;&gt;
+&#x9;&lt;div class=&quot;animate-7-container&quot;&gt;
+&#x9;&#x9;&#x9;&lt;div class=&quot;square&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&#x9;&lt;p&gt;Loading&lt;/p&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-7{
+	overflow: hidden;
+	width: 400px;
+	height: 80px;
+	background: none;
+
+	.animate-7-container{
+		position: relative;
+		width: 320px;
+		height: 2px;
+		background: $animation-color;
+		margin-top: 78px;
+
+		.square{
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			background: $animation-color;
+			border-radius: 30%;
+			top: -20px;
+			animation: animation-7 4s linear infinite;
+		}
+
+		p{
+			position: absolute;
+			font-size: 1em;
+			color: nth($list-bg-color, 7);
+			position: absolute;
+			top: calc(-2em - 5px);
+			right: -60px;
+
+			@media screen and (max-width: $media-small) {
+				font-size: .5em;
+			}
+		}
+	}
+}
+
+@keyframes animation-7{
+	0%{
+		left: 0;
+	}
+
+	35%{
+		transform: rotate(270deg) scale(1.5);
+		left: 50%;
+	}
+
+	60%{
+		transform: rotate(450deg) scale(2);
+		left: 100%;
+	}
+
+	70%{
+		transform: rotate(450deg) scale(2);
+		left: 100%;
+	}
+
+	90%{
+		transform: rotate(-450deg) scale(1);
+		left: 0;
+	}
+
+	100%{
+		transform: rotate(-450deg) scale(1);
+		left: 0;
+	}
+}
+					</code>
+				</pre>
+			</div>
+			<div class="animate-source animate-8-source">
+				<h1>Animation 8</h1>
+				<h2>HTML</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+&lt;div class=&quot;animate animate-8&quot;&gt;
+&#x9;&lt;div class=&quot;dot dot-1&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;dot dot-2&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;dot dot-3&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;dot dot-4&quot;&gt;&lt;/div&gt;
+&#x9;&lt;div class=&quot;dot dot-5&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+				<h2>SCSS</h2>
+				<pre class="source-code-container">
+					<code class="source-code">
+.animate-8{
+	width: 200px;
+	height: 80px;
+	background: none;
+	position: relative;
+	.dot{
+		width: 30px;
+		height: 30px;
+		margin: 30px 5px 0 5px;
+		border-radius: 50%;
+		position: absolute;
+		display: inline-block;
+		background: $animation-color;
+		animation: animation-8 3s linear infinite;
+	}
+
+	.dot-1{
+		left: 0;
+	}
+
+	.dot-2{
+		left: 40px;
+		animation-delay: .6s;
+	}
+
+	.dot-3{
+		left: 80px;
+		animation-delay: 1.2s;
+	}
+
+	.dot-4{
+		left: 120px;
+		animation-delay: 1.8s;
+	}
+
+	.dot-5{
+		left: 160px;
+		animation-delay: 2.4s;
+	}
+}
+
+@keyframes animation-8{
+	0%{
+		left: 0;
+	}
+
+	10%{
+		margin-top: 0;
+		left: 0;
+		height: 20px;
+		width: 35px;
+	}
+
+	20%{
+		height: 20px;
+		width: 35px;
+		left: 100%;
+		margin-top: 0;
+	}
+
+	25%{
+		height: 30px;
+		width: 30px;
+		left: 100%;
+		margin-top: 30px;
+	}
+
+	100%{
+		left: 0;
+	}
+}
+					</code>
+				</pre>
+			</div>
+		</div>
+		<a class="arrow arrow-left">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		<a class="arrow arrow-right">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		<a href="" class="view-source">
+			<i class="fa fa-chevron-left"></i>
+			<i class="fa fa-chevron-right"></i>
+			Source
+			<div class="view-source-underline"></div>
+		</a>
+
+	</main>
+
+	<script type="text/javascript" src="js/main.min.js"></script>
+</body>
+
 </html>

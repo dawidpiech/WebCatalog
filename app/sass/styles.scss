@@ -14,7 +14,7 @@ $category-blue: #4C98CF;
 $category-pink: #EB5160;
 $category-violett: #595386;
 $category-dark-blue: #4873A6;
-$media-medium: 1365px;
+$media-medium: 1366px;
 $media-small: 980px; 
 
 $menu-font-size: 36px;
@@ -32,6 +32,7 @@ $menu-font-size: 36px;
     margin: auto;
 }
 
+
 * {
     font-family: $font;
     box-sizing: border-box;
@@ -46,6 +47,11 @@ $menu-font-size: 36px;
     z-index: 9999;
     text-decoration: none;
     outline: 0;
+
+    @media screen and (max-width: $media-small){
+        width: $hamburger-size*2;
+    }
+
     span {
         width: 50%;
         border: $hamburger-size/20 solid $menu-font-color;
@@ -54,11 +60,18 @@ $menu-font-size: 36px;
         opacity: 0.6;
         margin-bottom: $hamburger-size/4;
         transition: .5s ease-in-out;
+        @media screen and (max-width: $media-small){
+            border: $hamburger-size/10 solid $menu-font-color;
+            margin-bottom: $hamburger-size/2;
+        }
         &:nth-child(2) {
             width: 100%;
         }
         &:nth-child(3) {
             margin-left: $hamburger-size/2;
+            @media screen and (max-width: $media-small){
+                margin-left: $hamburger-size;
+            }
         }
     }
     &:hover span {
@@ -70,10 +83,16 @@ $menu-font-size: 36px;
         transition: .5s ease-in-out;
         span {
             &:nth-child(1) {
-                transform: rotate(90deg) translateY(-$hamburger-size/4) translateX($hamburger-size/10 + $hamburger-size/40)
+                transform: rotate(90deg) translateY(-$hamburger-size/4) translateX($hamburger-size/10 + $hamburger-size/40);
+                @media screen and (max-width: $media-small){
+                    transform: rotate(90deg) translateY(-$hamburger-size/2) translateX($hamburger-size/5 + $hamburger-size/20);
+                }
             }
             &:nth-child(3) {
-                transform: rotate(90deg) translateY($hamburger-size/4) translateX(-$hamburger-size/10)
+                transform: rotate(90deg) translateY($hamburger-size/4) translateX(-$hamburger-size/10);
+                @media screen and (max-width: $media-small){
+                    transform: rotate(90deg) translateY($hamburger-size/2) translateX(-$hamburger-size/5);
+                }
             }
             opacity: 1;
         }
@@ -90,6 +109,11 @@ $menu-font-size: 36px;
     cursor: pointer;
     text-decoration: none;
     opacity: .8;
+    font-size: 1.2em;
+
+    @media screen and (min-width: $media-small) and (max-width: $media-medium){
+        font-size: 1.5em;
+    }
 
     .view-on-git-underline{
         height: 2px;
@@ -99,6 +123,18 @@ $menu-font-size: 36px;
         transition: all .25s ease-in-out 0s;
         transform: scaleX(0);
     }
+
+    span{
+        @media screen and(max-width: $media-small){
+            display: none;
+        }
+    }
+    i{
+        @media screen and(max-width: $media-small){
+            font-size: 2em;
+        }
+    }
+    
 
     &:hover {
         opacity: 1;
@@ -115,7 +151,6 @@ nav {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 9998;
     &::before {
         background: $menu-bg-color;
         content: '';
@@ -124,21 +159,34 @@ nav {
         height: 0;
         padding-bottom: 100%;
         border-radius: 100%;
-        transform: scale(0.04);
+        transform: scale(3);
         overflow: hidden;
         z-index: -1;
     }
     &.open {
         top: 0;
+        display: block;
+        z-index: 9998;
         &::before {
             animation: menuAnimation .8s ease-out forwards;
         }
     }
+
+    &.close{
+        top: 0;
+        z-index: 1;
+        transition: z-index 0s ease .8s;
+        &::before {
+            animation: menuAnimationClose .8s ease-out forwards .4s;
+        }
+    }
+    
     .menu {
         margin: auto;
         margin-top: 20vh;
         width: 620px;
         font-size: $menu-font-size;
+        transform: translateX(100vw);
         @media screen and (min-height: 1700px) {
             font-size: $menu-font-size * 1.3;
         }
@@ -211,13 +259,23 @@ nav {
                 }
             }
         }
+
+        &.menu-open{
+            opacity: 0;
+            transform: translateX(100vw);
+            animation: slideIn .6s ease-in .6s forwards;
+        }
+
+        &.menu-close{
+            opacity: 0;
+            transform: translateX(0);
+            animation: slideOut .6s ease-in 0s forwards;
+        }
     }
 
-    .menu.menu-open{
-        opacity: 0;
-        transform: translateX(100vw);
-        animation: slideIn .6s ease-in .6s forwards;
-    }
+    
+
+    
 
     .social-container {
         max-width: 620px;
@@ -255,7 +313,6 @@ nav {
 }
 
 .main {
-    overflow: hidden;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -439,10 +496,6 @@ nav {
     }
     40% {
         transform: scale(0.04) translateY(0);
-        transition: ease-out;
-    }
-    40% {
-        transform: scale(0.04) translateY(0);
     }
     60% {
         opacity: 1;
@@ -461,6 +514,34 @@ nav {
         height: 100%;
         padding-bottom: 0;
         border-radius: 0;
+    }
+}
+
+@keyframes menuAnimationClose {
+    0% {
+        transform: scale(2);
+        height: 100%;
+        padding-bottom: 0;
+        border-radius: 0;
+    }
+    40% {
+        height: 0;
+        padding-bottom: 100%;
+        border-radius: 100%;
+    }
+    60% {
+        transform: scale(0.04);
+    }
+    61% {
+        opacity: 1;
+        transform: scale(0.02) translateY(0px);
+    }
+    99% {
+        transform: scale(0.04) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.04) translateY(300%);
     }
 }
 
@@ -485,21 +566,52 @@ nav {
     }
 }
 
+@keyframes slideOut{
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    30%{
+        opacity: 1;
+        transform: translateX(-20vw);
+    }
+    60%{
+        opacity: 0.5;
+        transform: translateX(20vw);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateX(50vw);
+    }
+}
+
 /*******************************************
 LOADING ANIMATIONS
 *******************************************/
 
-$list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
+$list-bg-color: #06D6A0, #4ECDC4, #FF6B6B, #FFE66D, #1A535C, #118AB2, #EF476F, #E71D36, #2EC4B6;
+$animation-color: #fff+12;
 
 .loading-animations-container{
     width: 100%;
     height: 100vh;
     overflow: hidden;
     transition: background-color 0.6s ease-in-out;
+    position: relative;
+
+    @media screen and (max-width: $media-small) {
+        font-size: 2.5em;
+    }
 
     .arrow{
         font-size: 6em;
         color: #fff;
+        z-index: 20;
+        @media screen and (max-width: $media-small){
+            font-size: 4em;
+        }
     }
 
     .arrow-right{
@@ -521,6 +633,7 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
         top: 50vh;
         transform: translateY(-50%);
         opacity: .6;
+        display: none;
 
         &:hover{
             opacity: 1;
@@ -528,14 +641,48 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
         }
     }
 
+    .view-source{
+        display: block;
+        position: fixed;
+        left: 50%;
+        top: 3vh; 
+        color: $menu-font-color;
+        z-index: 2;
+        cursor: pointer;
+        text-decoration: none;
+        opacity: .8;
+        font-size: 1.2em;
+        transform: translateX(-50%);
+        
+        @media screen and (min-width: $media-small) and (max-width: $media-medium){
+            font-size: 1.5em;
+        }
+        .view-source-underline{
+            height: 2px;
+            width: 100%;
+            background: $menu-font-color;
+            position: relative;
+            transition: all .25s ease-in-out 0s;
+            transform: scaleX(0);
+        }
+
+        &:hover{
+            .view-source-underline{
+                transform: scaleX(1);
+            }
+        }
+    }
+        
+
     .animations{
-        width: 1200px;
+        width: 1800px;
         height: 80px;
         top: 50%;
         left: 50%;
         position: relative;
         transform: translateX(-60px) translateY(-50%);
-
+        z-index: 15;
+        transition: all 1s ease-in-out;
         ul{
             list-style-type: none;
             padding: 0;
@@ -546,10 +693,11 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                 display: inline-block;
                 margin: 0 20px;
                 opacity: 0;
+                transition: opacity .3s ease-in 0s;
             }
 
             .animate{
-                background: nth($list-bg-color, 3);
+                background: $animation-color;
                 opacity: .8;
             }
 
@@ -576,7 +724,7 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                     height: 20px;
                     border-radius: 50%;
                     transform: translateX(-40px);
-                    background: nth($list-bg-color, 3);
+                    background: $animation-color;
                     display: block;
                 }
 
@@ -586,7 +734,7 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                     height: 20px;
                     border-radius: 50%;
                     transform: translateX(40px);
-                    background: nth($list-bg-color, 3);
+                    background: $animation-color;
                     display: block;
                     margin-top: -20px;
                 }
@@ -605,7 +753,7 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                     position: absolute;
                     width: 20px;
                     height: 20px;
-                    background: nth($list-bg-color, 3);
+                    background: $animation-color;
                     top: 30px;
                     left: 30px;
                 }
@@ -614,7 +762,7 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                     position: absolute;
                     width: 80px;
                     height: 80px;
-                    background: nth($list-bg-color, 3);
+                    background: $animation-color;
                     animation: animation3-square-big 2s infinite;
                 }
 
@@ -665,13 +813,12 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                 background: none;
                 position: relative;
                 animation: animation-4-square-rotate 2s infinite;
-                margin: 0 10px;
 
                 .animation-4--square{
                     position: absolute;
                     width: 20px;
                     height: 20px;
-                    background: nth($list-bg-color, 3);
+                    background: $animation-color;
                 }
 
                 .animation-4--square-1{
@@ -699,6 +846,244 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
                 }
             }
 
+            .animate-5{
+                position: relative;
+                width: 80px;
+                height: 80px;
+                background: none;
+                animation: animation-5-rotate 2s linear infinite;
+                .dot-1, .dot-2{
+                    position: absolute;
+                    width: 60%;
+                    height: 60%;
+                    display: inline-block;
+                    top: 0;
+                    background: $animation-color;
+                    border-radius: 100%;
+                    animation: animation-5-scale 2s ease-in-out infinite;
+                    transform: scale(0);
+                }
+                .dot-2{
+                    top: auto;
+                    right: 0;
+                    bottom: 0;
+                    animation-delay: -1s;
+                }
+            }
+
+            .animate-6{
+                width: 160px;
+                height: 80px;
+                background: none;
+                .dot{
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 30px;
+                    position: absolute;
+                    border-radius: 50%;
+                    animation: animation-6 3s ease-in-out infinite;
+                    background: $animation-color;
+                }
+                .dot-1{
+                    opacity: 1;
+
+                }
+
+                .dot-2{
+                    opacity: .8;
+                    animation-delay: .2s;
+                }
+
+                .dot-3{
+                    opacity: .6;
+                    animation-delay: .4s;
+                }
+
+                .dot-4{
+                    opacity: .4;
+                    animation-delay: .6s;
+                }
+
+                .dot-5{
+                    opacity: .2;
+                    animation-delay: .8s;
+                }
+            }
+
+            .animate-7{
+                overflow: hidden;
+                width: 400px;
+                height: 80px;
+                background: none;
+
+                .animate-7-container{
+                    position: relative;
+                    width: 320px;
+                    height: 2px;
+                    background: $animation-color;
+                    margin-top: 78px;
+
+                    .square{
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        background: $animation-color;
+                        border-radius: 30%;
+                        top: -20px;
+                        animation: animation-7 4s linear infinite;
+                    }
+    
+                    p{
+                        position: absolute;
+                        font-size: 1em;
+                        color: nth($list-bg-color, 7);
+                        position: absolute;
+                        top: calc(-2em - 5px);
+                        right: -55px;
+    
+                        @media screen and (max-width: $media-small) {
+                            font-size: .5em;
+                        }
+                    }
+                }
+            }
+
+            .animate-8{
+                    width: 200px;
+                    height: 80px;
+                    background: none;
+                    position: relative;
+                    .dot{
+                        width: 30px;
+                        height: 30px;
+                        margin: 30px 5px 0 5px;
+                        border-radius: 50%;
+                        position: absolute;
+                        display: inline-block;
+                        background: $animation-color;
+                        animation: animation-8 3s linear infinite;
+                    }
+
+                    .dot-1{
+                        left: 0;
+                    }
+
+                    .dot-2{
+                        left: 40px;
+                        animation-delay: .6s;
+                    }
+
+                    .dot-3{
+                        left: 80px;
+                        animation-delay: 1.2s;
+                    }
+
+                    .dot-4{
+                        left: 120px;
+                        animation-delay: 1.8s;
+                    }
+
+                    .dot-5{
+                        left: 160px;
+                        animation-delay: 2.4s;
+                    }
+            }
+        }
+    }
+
+    .animations-active-source{
+        left: 25%;
+        transition: all 1s ease-in-out .3s;
+
+        li .animate-7 .animate-7-container p{
+            color: nth($list-bg-color, 9);
+        }
+        @media screen and (max-width: $media-small) {
+            left: 50%;
+            top: 25%;
+        }
+    }
+
+    .animations-source{
+        width: 100%;
+        height: 100%;
+        padding-left: 100%; 
+        z-index: 10;
+        top: 0;
+        display: none;
+        position: fixed;
+        overflow-y: scroll;
+        animation: sourceAnimationContentClose .5s forwards;
+        .animate-source{
+            display: none;
+            background-color: #fff;
+            overflow-x: hidden;
+            h1{
+                padding: 10px 30px;
+            }
+            h2{
+                color: $animation-color - 96;
+                padding: 10px 30px;
+            }
+            .source-code-container{
+                width: 100%;
+                background-color: $animation-color - 30;
+                padding: 20px;
+                overflow-x: scroll;
+            }
+        }
+
+        &::before{
+            content: "";
+            width: 100%;
+            padding-bottom: 100%;
+            background: nth($list-bg-color, 9);
+            position: fixed;
+            border-radius: 50%;
+            top: 0;
+            left: -100%;
+            z-index: -1;
+        }
+
+        .source-close-btn{
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+
+            i{
+                font-size: 60px;
+                color: #fff;
+                opacity: .8;
+            }
+        }
+
+    }
+
+    .source-open{
+        &::before{
+            animation: sourceAnimation 1.5s forwards;
+        }
+
+        animation: sourceAnimationContent .8s forwards;
+        animation-delay: .3s;
+
+        @media screen and (max-width: $media-small){
+            animation: sourceAnimationContentSmallScreen .8s forwards;
+        }
+    }
+
+    .source-close{
+        &::before{
+            animation: sourceAnimationClose 1.5s forwards;
+        }
+
+        animation: sourceAnimationContentClose .8s forwards;
+
+        @media screen and (max-width: $media-small){
+            animation: sourceAnimationContentCloseSmallScreen .8s forwards;
         }
     }
 }
@@ -721,6 +1106,66 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
 
 .active5{
     background-color: nth($list-bg-color, 5);
+}
+
+.active6{
+    background-color: nth($list-bg-color, 6);
+}
+
+.active7{
+    background-color: nth($list-bg-color, 7);
+}
+
+.active8{
+    background-color: nth($list-bg-color, 8);
+}
+
+@keyframes sourceAnimation{
+    100%{
+        transform: scale(5);
+    }
+}
+
+@keyframes sourceAnimationClose{
+    0%{
+        transform: scale(5);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+@keyframes sourceAnimationContent{
+    100%{
+        padding-left: 50%;
+    }
+}
+
+@keyframes sourceAnimationContentSmallScreen{
+    100%{
+        padding-left: 0;
+        padding-top: 50vh;
+    }
+}
+
+@keyframes sourceAnimationContentClose{
+    0%{
+        padding-left: 50%;
+    }
+    100%{
+        padding-left: 100%;
+    }
+}
+
+@keyframes sourceAnimationContentCloseSmallScreen{
+    0%{
+        padding-left: 0;
+        top: 50%;
+    }
+    100%{
+        padding-left: 100%;
+        top: 0;
+    }
 }
 
 @keyframes animation1{
@@ -821,4 +1266,94 @@ $list-bg-color: #1A535C, #4ECDC4, #F7FFF7, #FF6B6B, #FFE66D;
     } 
 }
 
+@keyframes animation-5-rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
+@keyframes animation-5-scale{
+    50%{
+        transform: scale(1);
+    }
+}
+
+@keyframes animation-6{
+    30%{
+        margin-left: 140px;
+    }
+
+    50%{
+        margin-left: 140px;
+    }
+
+    80%{
+        margin-left: 0;
+    }
+
+    100%{
+        margin-left: 0;
+    }
+}
+
+@keyframes animation-7{
+    0%{
+        left: 0;
+    }
+
+    35%{
+        transform: rotate(270deg) scale(1.5);
+        left: 50%;
+    }
+
+    60%{
+        transform: rotate(450deg) scale(2);
+        left: 100%;
+    }
+
+    70%{
+        transform: rotate(450deg) scale(2);
+        left: 100%;
+    }
+
+    90%{
+        transform: rotate(-450deg) scale(1);
+        left: 0;
+    }
+
+    100%{
+        transform: rotate(-450deg) scale(1);
+        left: 0;
+    }
+}
+
+@keyframes animation-8{
+    0%{
+        left: 0;
+    }
+
+    10%{
+        margin-top: 0;
+        left: 0;
+        height: 20px;
+        width: 35px;
+    }
+
+    20%{
+        height: 20px;
+        width: 35px;
+        left: 100%;
+        margin-top: 0;
+    }
+
+    25%{
+        height: 30px;
+        width: 30px;
+        left: 100%;
+        margin-top: 30px;
+    }
+
+    100%{
+        left: 0;
+    }
+}
