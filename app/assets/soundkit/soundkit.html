@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dawid Piech">
+    <meta name="Description" content="Web catalog is a collection of animation, or other project which I did while studying.">
+    <meta name="Keywords" content="web animations, animations, hamburger, game, games, catalog, catalog of animation">
+    <title>Web Catalog - soundkit</title>
+    <link type="text/css" rel="stylesheet" href="../../css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <a href="https://github.com/dawidpiech/WebCatalog" class="view-on-git" target="_blank">
+            <i class="fab fa-github" style="font-size: 24px;"></i>
+            <span>View project on Github</span>
+            <div class="view-on-git-underline"></div>
+        </a>
+        <nav>
+            <div class="menu">
+                <div class="author">
+                    <span>DAWID PIECH</span>
+                    <div class="under-line"></div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="../../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="">My
+                            portfolio</a>
+                    </li>
+                </ul>
+
+                <div class="social-container">
+                    <a href="https://github.com/dawidpiech" target="_blank" class="git social">
+                        <i class="fab fa-github" style="padding-right: 10px;"></i>
+                        Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/dawid-piech-2a2999159/" target="_blank" class="linkedin social">
+                        <i class="fab fa-linkedin" style="padding-right: 10px;"></i>
+                        Linkedin
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <img class="bg" src="./assets/img/bg.jpg" alt="Picture from pixabay: https://pixabay.com/en/turntable-top-view-audio-equipment-1109588/">
+    <div id="container">
+        <audio src="./assets/sounds/clap.wav" data-key="81"></audio>
+        <audio src="./assets/sounds/boom.wav" data-key="87"></audio>
+        <audio src="./assets/sounds/hihat.wav" data-key="69"></audio>
+        <audio src="./assets/sounds/kick.wav" data-key="82"></audio>
+        <audio src="./assets/sounds/openhat.wav" data-key="84"></audio>
+        <audio src="./assets/sounds/ride.wav" data-key="89"></audio>
+        <audio src="./assets/sounds/snare.wav" data-key="85"></audio>
+        <audio src="./assets/sounds/tink.wav" data-key="73"></audio>
+        <audio src="./assets/sounds/tom.wav" data-key="79"></audio>
+        <div class="buttons-container">
+            <div class="buttons">
+                <button class="sound" data-key="81">Q</button>
+                <button class="sound" data-key="87">W</button>
+                <button class="sound" data-key="69">E</button>
+                <button class="sound" data-key="82">R</button>
+                <button class="sound" data-key="84">T</button>
+                <button class="sound" data-key="89">Y</button>
+                <button class="sound" data-key="85">U</button>
+                <button class="sound" data-key="73">I</button>
+                <button class="sound" data-key="79">O</button>
+            </div>
+        </div>
+        <div class="animation"></div>
+        <div class="controls">
+            <button id="play">&#9654;</button>
+            <button id="record">&#9679;</button>
+            <button id="clear">&#9632;</button>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../../js/main.min.js"></script>
+    <script type="text/javascript" src="./js/function.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>

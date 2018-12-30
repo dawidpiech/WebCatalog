@@ -8,7 +8,7 @@ import uglify from 'gulp-uglify-es'
 import sourcemaps from 'gulp-sourcemaps'
 let browserSync = require('browser-sync').create()
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build'])
 
 //Minify and concat js file
 gulp.task('js', ()=>{

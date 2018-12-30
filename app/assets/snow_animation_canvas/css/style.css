@@ -1,0 +1,8 @@
+#myCanvas{
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: block;
+	background: url("../img/background.jpg") right bottom;
+}

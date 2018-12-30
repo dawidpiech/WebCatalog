@@ -15,6 +15,7 @@ $category-pink: #EB5160;
 $category-violett: #595386;
 $category-dark-blue: #4873A6;
 $media-medium: 1366px;
+$media-small-medium: 1023px;
 $media-small: 980px; 
 
 $menu-font-size: 36px;
@@ -191,7 +192,7 @@ nav {
             font-size: $menu-font-size * 1.3;
         }
 
-        @media screen and (max-height: 600px) {
+        @media screen and (max-height: 900px) {
             font-size: $menu-font-size * .8;
             margin-top: 12vh;
         }
@@ -230,6 +231,7 @@ nav {
                 overflow: hidden;
                 display: block;
                 position: relative;
+                cursor: pointer;
                 &::after{
                     content: "";
                     background-color: $menu-font-color;
@@ -247,16 +249,16 @@ nav {
                 &:hover::after{
                     transform: scaleY(1)
                 }
+
+                &:hover a{
+                    color: $menu-bg-color;
+                }
             }
             a {
                 text-decoration: none;
                 color: $menu-font-color;
                 font-weight: 600;
                 font-size: 2em;
-
-                &:hover{
-                    color: $menu-bg-color;
-                }
             }
         }
 
@@ -312,26 +314,23 @@ nav {
     }
 }
 
-.main {
+main {
     padding: 0;
     margin: 0;
     width: 100%;
     font-size: $menu-font-size/3;
 
+    a {
+        text-decoration: none;
+    }
 
     .nav-category {
         position: absolute;
         display: flex;
-        align-content: center;
         box-sizing: border-box;
         outline: 10px solid #fff;
         cursor: pointer;
         outline-offset: -10px;
-        a {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
         .category {
             color: white;
             text-align: center;
@@ -388,6 +387,7 @@ nav {
             }
         }
     }
+
     .nav-container {
         width: 50%;
         height: 100vh;
@@ -397,6 +397,35 @@ nav {
             width: 100%;
         }
     }
+
+    .ball-in-hole{
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        background: $category-green;
+    }
+
+    .snow-animation-canvas{
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        background: $category-pink;
+    }
+
+    .snow-animation-frame{
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        background: $category-blue;
+    }
+
+    .soundkit{
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        background: $category-violett;
+    }
+
     .nav-left {
         .cat-1 {
             width: 100%;
@@ -426,25 +455,11 @@ nav {
             }
         }
         .cat-7 {
-            width: 25%;
+            width: 50%;
             height: 25vh;
             top: 75vh;
             left: 0;
             background: $category-green;
-            @media screen and (max-width: $media-small) {
-                font-size: 0.5em;
-            }
-        }
-        .cat-8 {
-            width: 25%;
-            height: 25vh;
-            top: 75vh;
-            left: 25%;
-            background: $category-violett;
-            @media screen and (min-width: $media-small) and (max-width: $media-medium) {
-                left: 25%;
-            }
-
             @media screen and (max-width: $media-small) {
                 font-size: 0.5em;
             }
@@ -651,11 +666,11 @@ $animation-color: #fff+12;
         cursor: pointer;
         text-decoration: none;
         opacity: .8;
-        font-size: 1.2em;
+        font-size: 2em;
         transform: translateX(-50%);
         
-        @media screen and (min-width: $media-small) and (max-width: $media-medium){
-            font-size: 1.5em;
+        @media screen and (min-width: $media-small) and (max-width: $media-small-medium){
+            font-size: 1em;
         }
         .view-source-underline{
             height: 2px;
@@ -1018,6 +1033,7 @@ $animation-color: #fff+12;
             display: none;
             background-color: #fff;
             overflow-x: hidden;
+            min-height: 100%;
             h1{
                 padding: 10px 30px;
             }
@@ -1357,3 +1373,85 @@ $animation-color: #fff+12;
         left: 0;
     }
 }
+
+
+
+/*******************************************
+Hamburger effects
+*******************************************/
+$list-bg-hamburger-color: #141414, #d10e55, #005de0, #5bdeff, #f1b95c, #56BF79, #e0519e, #f97d4e, #7a4ea3;
+
+.hamburgers-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hamburger-container{
+    width: 33.33%;
+    height: 33.33vh;
+    display: flex;
+}
+
+.hamburger-1{
+    background: nth( $list-bg-hamburger-color, 1);
+}
+
+.hamburger-2{
+    background: nth( $list-bg-hamburger-color, 2);
+}
+
+.hamburger-3{
+    background: nth( $list-bg-hamburger-color, 3);
+}
+
+.hamburger-4{
+    background: nth( $list-bg-hamburger-color, 4);
+}
+
+.hamburger-5{
+    background: nth( $list-bg-hamburger-color, 5);
+}
+
+.hamburger-6{
+    background: nth( $list-bg-hamburger-color, 6);
+}
+
+.hamburger-7{
+    background: nth( $list-bg-hamburger-color, 7);
+}
+
+.hamburger-8{
+    background: nth( $list-bg-hamburger-color, 8);
+}
+
+.hamburger-9{
+    background: nth( $list-bg-hamburger-color, 9);
+}
+/*******************************************
+Cooming soon
+*******************************************/
+
+.cooming-soon-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: $menu-bg-color - 30;
+    .cooming-soon-center{
+        @include position-center();
+        width: 600px;
+        height: 400px;
+        text-align: center;
+        color: white;
+
+        i{
+            font-size: 300px;
+        }
+
+        p{
+            width: 100%;
+            font-family: 'Indie Flower', cursive;
+            font-size: 40px;
+            text-align: center;
+        }
+    }
+}
+
