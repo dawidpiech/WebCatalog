@@ -56,16 +56,51 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     let hamburger_3 = document.querySelector(".hamburger-3 div"),
-    hamburger_4 = document.querySelector(".hamburger-4 div")
+    hamburger_4 = document.querySelector(".hamburger-4 div"),
+    hamburger_5 = document.querySelector(".hamburger-5 div"),
+    hamburger_6 = document.querySelector(".hamburger-6 div"),
+    hamburger_7 = document.querySelector(".hamburger-7 div"),
+    hamburger_8 = document.querySelector(".hamburger-8 div"),
+    hamburger_9 = document.querySelector(".hamburger-9 div")
+
+
     
 
-    hamburger_3.addEventListener("mouseover", () => hamburger_3.classList.toggle("active"))
-    hamburger_3.addEventListener("mouseout", () => hamburger_3.classList.toggle("active"))
+    hamburger_3.addEventListener("mouseover", () => hamburger_3.classList.add("active"))
+    hamburger_3.addEventListener("mouseout", () => hamburger_3.classList.remove("active"))
+    hamburger_3.addEventListener("mouseover", () => hamburger_3.classList.remove("unactive"))
+    hamburger_3.addEventListener("mouseout", () => hamburger_3.classList.add("unactive"))
+
 
     hamburger_4.addEventListener("mouseover", () => hamburger_4.classList.add("active"))
     hamburger_4.addEventListener("mouseout", () => hamburger_4.classList.remove("active"))
     hamburger_4.addEventListener("mouseover", () => hamburger_4.classList.remove("unactive"))
     hamburger_4.addEventListener("mouseout", () => hamburger_4.classList.add("unactive"))
+
+    hamburger_5.addEventListener("mouseover", () => hamburger_5.classList.add("active"))
+    hamburger_5.addEventListener("mouseout", () => hamburger_5.classList.remove("active"))
+    hamburger_5.addEventListener("mouseover", () => hamburger_5.classList.remove("unactive"))
+    hamburger_5.addEventListener("mouseout", () => hamburger_5.classList.add("unactive"))
+
+    hamburger_6.addEventListener("mouseover", () => hamburger_6.classList.add("active"))
+    hamburger_6.addEventListener("mouseout", () => hamburger_6.classList.remove("active"))
+    hamburger_6.addEventListener("mouseover", () => hamburger_6.classList.remove("unactive"))
+    hamburger_6.addEventListener("mouseout", () => hamburger_6.classList.add("unactive"))
+
+    hamburger_7.addEventListener("mouseover", () => hamburger_7.classList.add("active"))
+    hamburger_7.addEventListener("mouseout", () => hamburger_7.classList.remove("active"))
+    hamburger_7.addEventListener("mouseover", () => hamburger_7.classList.remove("unactive"))
+    hamburger_7.addEventListener("mouseout", () => hamburger_7.classList.add("unactive"))
+
+    hamburger_8.addEventListener("mouseover", () => hamburger_8.classList.add("active"))
+    hamburger_8.addEventListener("mouseout", () => hamburger_8.classList.remove("active"))
+    hamburger_8.addEventListener("mouseover", () => hamburger_8.classList.remove("unactive"))
+    hamburger_8.addEventListener("mouseout", () => hamburger_8.classList.add("unactive"))
+
+    hamburger_9.addEventListener("mouseover", () => hamburger_9.classList.add("active"))
+    hamburger_9.addEventListener("mouseout", () => hamburger_9.classList.remove("active"))
+    hamburger_9.addEventListener("mouseover", () => hamburger_9.classList.remove("unactive"))
+    hamburger_9.addEventListener("mouseout", () => hamburger_9.classList.add("unactive"))
     
     function openSource(e) {
         e.preventDefault()
