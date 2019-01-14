@@ -1905,37 +1905,37 @@ $list-bg-hamburger-color: #141414, #d10e55, #005de0, #5bdeff, #f1b95c, #56bf79,
       border-radius: 10px;
     }
 
-    &.active{
-      animation: hamburger-9-active-rotate .2s linear forwards .4s;
-      :nth-child(1){
-        animation: hamburger-9-active-1 .2s linear forwards .2s;
+    &.active {
+      animation: hamburger-9-active-rotate 0.2s linear forwards 0.4s;
+      :nth-child(1) {
+        animation: hamburger-9-active-1 0.2s linear forwards 0.2s;
       }
 
-      :nth-child(2){
-        animation: hamburger-9-active-2 .2s linear forwards;
+      :nth-child(2) {
+        animation: hamburger-9-active-2 0.2s linear forwards;
       }
 
-      :nth-child(3){
-        animation: hamburger-9-active-3 .2s linear forwards .2s;
+      :nth-child(3) {
+        animation: hamburger-9-active-3 0.2s linear forwards 0.2s;
       }
     }
 
-    &.unactive{
+    &.unactive {
       transform: rotate(45deg);
-      animation: hamburger-9-unactive-rotate .2s linear forwards;
-      :nth-child(1){
+      animation: hamburger-9-unactive-rotate 0.2s linear forwards;
+      :nth-child(1) {
         transform: translateY(25px);
-        animation: hamburger-9-unactive-1 .2s linear forwards .2s;
+        animation: hamburger-9-unactive-1 0.2s linear forwards 0.2s;
       }
 
-      :nth-child(2){
+      :nth-child(2) {
         transform: scaleX(0);
-        animation: hamburger-9-unactive-2 .2s linear forwards .3s;
+        animation: hamburger-9-unactive-2 0.2s linear forwards 0.3s;
       }
 
-      :nth-child(3){
+      :nth-child(3) {
         transform: rotate(90deg) translateX(-16px);
-        animation: hamburger-9-unactive-3 .2s linear forwards .2s;
+        animation: hamburger-9-unactive-3 0.2s linear forwards 0.2s;
       }
     }
   }
@@ -2652,54 +2652,54 @@ $list-bg-hamburger-color: #141414, #d10e55, #005de0, #5bdeff, #f1b95c, #56bf79,
   }
 }
 
-@keyframes hamburger-9-active-rotate{
-  0%{
+@keyframes hamburger-9-active-rotate {
+  0% {
     transform: rotate(0);
   }
 
-  100%{
+  100% {
     transform: rotate(45deg);
   }
 }
 
-@keyframes hamburger-9-active-1{
-  100%{
+@keyframes hamburger-9-active-1 {
+  100% {
     transform: translateY(25px);
   }
 }
 
-@keyframes hamburger-9-active-2{
-  100%{
+@keyframes hamburger-9-active-2 {
+  100% {
     transform: scaleX(0);
   }
 }
 
-@keyframes hamburger-9-active-3{
-  100%{
+@keyframes hamburger-9-active-3 {
+  100% {
     transform: rotate(90deg) translateX(-16px);
   }
 }
 
-@keyframes hamburger-9-unactive-rotate{
-  100%{
+@keyframes hamburger-9-unactive-rotate {
+  100% {
     transform: rotate(0);
   }
 }
 
-@keyframes hamburger-9-unactive-1{
-  100%{
+@keyframes hamburger-9-unactive-1 {
+  100% {
     transform: translateY(0);
   }
 }
 
-@keyframes hamburger-9-unactive-2{
-  100%{
+@keyframes hamburger-9-unactive-2 {
+  100% {
     transform: scaleX(1);
   }
 }
 
-@keyframes hamburger-9-unactive-3{
-  100%{
+@keyframes hamburger-9-unactive-3 {
+  100% {
     transform: rotate(0) translateX(0);
   }
 }
